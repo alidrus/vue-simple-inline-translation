@@ -42,6 +42,6 @@
     "vue",
     "component"
   ],
-  "main": "dist/vue-simple-inline-translation.umd.js",
+  "main": "dist/vue-simple-inline-translation.common.js",
   "module": "dist/vue-simple-inline-translation.common.min.js"
 }
