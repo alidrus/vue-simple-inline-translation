@@ -1,70 +1,45 @@
-# vue-simple-inline-translation
-A Vue component that simplifies the way text is translation. It's so simple that it's almost stupid.
+# @alidrus/vue-simple-inline-translation
+A Vue component that simplifies the way text is translated: by translating it inline.
 
 ## Usage
+
 ```HTML
-<VueSimpleInlineTranslation :text="hello"></VueSimpleInlineTranslation>
+<template>
+    <h1>
+        <translation :current-language="current" language="en">Welcome</translation>
+        <translation :current-language="current" language="ms">Selamat Datang</translation>
+        <translation :current-language="current" language="tl">Maligayang Pagdating</translation>
+    </h1>
+</template>
+
+<script>
 ```
 ```javascript
 import { VueSimpleInlineTranslation } from 'vue-simple-inline-translation'
 
 export default {
   components: {
-    VueSimpleInlineTranslation
+    translation: VueSimpleInlineTranslation
+  },
+  data() {
+    return {
+      current: 'en'
+    };
   }
 }
 ```
-## API
+```HTML
+</script>
+```
 
 ## Installation
-```
-npm install vue-simple-inline-translation
+
+With npm:
+```bash
+npm install @alidrus/vue-simple-inline-translation
 ```
 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Run your unit tests
-```
-yarn run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### Update the API section of README.md with generated documentation
-```
-yarn run doc:build
-```
-
-### Run style guide dev server
-```
-yarn run styleguide
-```
-
-### Generate a static HTML style guide
-```
-yarn run styleguide:build
+With yarn:
+```bash
+yarn add @alidrus/vue-simple-inline-translation
 ```
