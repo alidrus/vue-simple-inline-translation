@@ -1,4 +1,25 @@
+
 # vue-simple-inline-translation
+
+## Usage
+```HTML
+<VueSimpleInlineTranslation :text="hello"></VueSimpleInlineTranslation>
+```
+```javascript
+import { VueSimpleInlineTranslation } from 'vue-simple-inline-translation'
+
+export default {
+  components: {
+    VueSimpleInlineTranslation
+  }
+}
+```
+## API
+
+## Installation
+```
+npm install vue-simple-inline-translation
+```
 
 ## Project setup
 ```
@@ -32,3 +53,18 @@ yarn run test:unit
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Update the API section of README.md with generated documentation
+```
+yarn run doc:build
+```
+
+### Run style guide dev server
+```
+yarn run styleguide
+```
+
+### Generate a static HTML style guide
+```
+yarn run styleguide:build
+```
