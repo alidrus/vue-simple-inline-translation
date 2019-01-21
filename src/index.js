@@ -2,4 +2,6 @@ import VueSimpleInlineTranslation from './components/VueSimpleInlineTranslation.
 
 export {
     VueSimpleInlineTranslation
-}
+};
+
+export default VueSimpleInlineTranslation;
