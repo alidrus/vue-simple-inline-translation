@@ -33,9 +33,10 @@
     "vue-template-compiler": "^2.5.21"
   },
   "files": [
-    "dist/*.css",
-    "dist/*.map",
+    "LICENSE",
+    "README.md",
     "dist/*.js",
+    "dist/*.map",
     "src/*"
   ],
   "keywords": [
