@@ -13,22 +13,18 @@ A Vue component that simplifies the way text is translated: by translating it in
 </template>
 
 <script>
-```
-```javascript
-import { VueSimpleInlineTranslation } from 'vue-simple-inline-translation'
+import { VueSimpleInlineTranslation } from '@alidrus/vue-simple-inline-translation';
 
 export default {
-  components: {
-    translation: VueSimpleInlineTranslation
-  },
-  data() {
-    return {
-      current: 'en'
-    };
-  }
+    components: {
+        translation: VueSimpleInlineTranslation
+    },
+    data() {
+        return {
+            current: 'en'
+        };
+    }
 }
-```
-```HTML
 </script>
 ```
 
