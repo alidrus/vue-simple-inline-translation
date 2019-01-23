@@ -1,1 +1,17 @@
 node_modules
+babel.config.js
+.browserslistrc
+dist/*.map
+.editorconfig
+.eslintrc.js
+example
+.git
+.gitignore
+.npmignore
+postcss.config.js
+public
+styleguide
+tests
+.travis.yml
+yarn.lock
+*.swp
