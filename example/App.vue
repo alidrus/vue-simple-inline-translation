@@ -17,11 +17,11 @@
         <translate enclosing-tag="h3" language="sv"
             v-bind:current-language="current">God <b>Morgon</b></translate>
 
-        <p>Hello my language is {{ languages[current] }} and the way I say welcome is:
-        <translate v-bind:current-language="current" language="en">Welcome</translate>
-        <translate v-bind:current-language="current" language="ms">Selamat Datang</translate>
-        <translate v-bind:current-language="current" language="sv">Välkommen</translate>
-        <translate v-bind:current-language="current" language="ar">اهلا و سهلا</translate>
+        <p>Hello my language is <b>{{ languages[current] }}</b> and the way I say welcome is:
+        <translate v-bind:current-language="current" language="en"><b>Welcome</b></translate>
+        <translate v-bind:current-language="current" language="ms"><b>Selamat Datang</b></translate>
+        <translate v-bind:current-language="current" language="sv"><b>Välkommen</b></translate>
+        <translate v-bind:current-language="current" language="ar"><b>اهلا و سهلا</b></translate>
         </p>
     </div>
 </template>
