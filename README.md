@@ -1,6 +1,8 @@
 # @alidrus/vue-simple-inline-translation
 A Vue component that simplifies the way text is translated: by translating it inline.
 
+[![Build Status](https://travis-ci.org/alidrus/vue-simple-inline-translation.svg?branch=master)](https://travis-ci.org/alidrus/vue-simple-inline-translation)
+
 ## Installation
 
 With npm:
