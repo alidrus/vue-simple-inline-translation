@@ -1,6 +1,10 @@
 <script>
 export default {
     props: {
+        enclosingTag: {
+            type: String,
+            default: 'span'
+        },
         language: String,
         currentLanguage: String
     },
@@ -8,7 +12,7 @@ export default {
         if (this.language === this.currentLanguage) {
             return this.$slots.default.length === 1
                 ? this.$slots.default[0]
-                : h('span', this.$slots.default);
+                : h(this.enclosingTag, this.$slots.default);
         }
         return this._v('');
     }
