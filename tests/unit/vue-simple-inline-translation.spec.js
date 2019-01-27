@@ -29,7 +29,7 @@ describe('VueSimpleInlineTranslation.vue', () => {
         expect(wrapper.isEmpty()).to.equal(true);
     });
 
-    it('enclosed by <span> tag if slot contains HTML elements', () => {
+    it('renders text and html enclosed by <span> tag if slot contains HTML elements', () => {
         const text = 'Hello there <b>World</b>';
         const currentLanguage = 'en';
         const language = 'en';
@@ -40,5 +40,19 @@ describe('VueSimpleInlineTranslation.vue', () => {
             }
         });
         expect(wrapper.is('span')).to.equal(true);
+    });
+
+    it('renders text and html enclosed by the specified tag if enclosingTag is set and slot contains HTML elements', () => {
+        const text = 'Hello there <b>World</b>';
+        const currentLanguage = 'en';
+        const language = 'en';
+        const enclosingTag = 'p';
+        const wrapper = mount(VueSimpleInlineTranslation, {
+            propsData: { currentLanguage, language, enclosingTag },
+            slots: {
+                default: text
+            }
+        });
+        expect(wrapper.is(enclosingTag)).to.equal(true);
     });
 });
