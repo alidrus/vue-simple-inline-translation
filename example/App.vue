@@ -1,7 +1,8 @@
 <template>
     <div id="app">
         <select v-model='current'>
-            <option v-for="(value, key, index) in languages" v-bind:value="key">{{ value }}</option>
+            <option v-for="(value, key, index) in languages" v-bind:key="index"
+            v-bind:value="key">{{ value }}</option>
         </select>
 
         <translate enclosing-tag="h3" language="ar"
@@ -44,7 +45,7 @@ export default {
             current: 'ms'
         };
     }
-}
+};
 </script>
 
 <style>
