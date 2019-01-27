@@ -1,9 +1,7 @@
 <template>
     <div id="app">
-        <translate language="en" v-bind:current-language="current">
-        Good <b>Morning</b></translate>
-        <translate language="ms" v-bind:current-language="current">
-        Selamat <b>Pagi</b></translate>
+        <translate enclosing-tag="p" language="en" v-bind:current-language="current">Good <b>Morning</b></translate>
+        <translate enclosing-tag="p" language="ms" v-bind:current-language="current">Selamat <b>Pagi</b></translate>
     </div>
 </template>
 
