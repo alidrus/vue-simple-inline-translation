@@ -42,7 +42,7 @@ describe('VueSimpleInlineTranslation.vue', () => {
         expect(wrapper.is('span')).to.equal(true);
     });
 
-    it('renders text and html enclosed by the specified tag if enclosingTag is set and slot contains HTML elements', () => {
+    it('renders text and html enclosed by the enclosingTag if it is set', () => {
         const text = 'Hello there <b>World</b>';
         const currentLanguage = 'en';
         const language = 'en';
