@@ -43,16 +43,25 @@ export default {
 ```
 
 ## Output (in HTML)
+
 The usage example above produces the following output:
 ```HTML
 <h1>Selamat Datang</h1>
 ```
+
+For a more extensive example, check App.vue in the *example/* folder.
 
 ## Feature (and Caveat)
 You can embed plain text and some HTML tags within the `<translation>` block. I
 recommend it only for typesetting purposes (bold, italic, etc) though. Due to
 the fact that you cannot have multiple root elements within a component
 template, having tags in the enclosed text will add a `<span>` block around it.
+
+:new: You can now specify the enclosing tag to use instead of the default
+`<span>` by specifying the prop `enclosing-tag`:
+```HTML
+    <translation enclosing-tag="div" current-language="en" language="en">This will be enclosed within a <b>div</b> tag.</translation>
+```
 
 For example:
 ```HTML
