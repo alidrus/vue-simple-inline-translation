@@ -1,27 +1,21 @@
 <template>
     <div id="app">
         <select v-model='current'>
-            <option v-for="(value, key, index) in languages" v-bind:key="index"
-            v-bind:value="key">{{ value }}</option>
+            <option v-for="(value, key, index) in languages" v-bind:key="index" v-bind:value="key">{{ value }}</option>
         </select>
 
-        <translate enclosing-tag="h3" language="ar"
-            v-bind:current-language="current"><b>صباح</b> الخير</translate>
+        <translate enclosing-tag="h3" language="ar" v-bind:current-language="current"><b>صباح</b> الخير</translate>
+        <translate enclosing-tag="h3" language="en" v-bind:current-language="current">Good <b>Morning</b></translate>
+        <translate enclosing-tag="h3" language="ms" v-bind:current-language="current">Selamat <b>Pagi</b></translate>
+        <translate enclosing-tag="h3" language="sv" v-bind:current-language="current">God <b>Morgon</b></translate>
+        <translate enclosing-tag="h3" language="tl" v-bind:current-language="current">Magandang <b>Umaga</b></translate>
 
-        <translate enclosing-tag="h3" language="en"
-            v-bind:current-language="current">Good <b>Morning</b></translate>
-
-        <translate enclosing-tag="h3" language="ms"
-            v-bind:current-language="current">Selamat <b>Pagi</b></translate>
-
-        <translate enclosing-tag="h3" language="sv"
-            v-bind:current-language="current">God <b>Morgon</b></translate>
-
-        <p>Hello my language is <b>{{ languages[current] }}</b> and the way I say welcome is:
+        <p>Hello! My language is <b>{{ languages[current] }}</b> and the way I say welcome is:
+        <translate v-bind:current-language="current" language="ar"><b>اهلا و سهلا</b></translate>
         <translate v-bind:current-language="current" language="en"><b>Welcome</b></translate>
         <translate v-bind:current-language="current" language="ms"><b>Selamat Datang</b></translate>
         <translate v-bind:current-language="current" language="sv"><b>Välkommen</b></translate>
-        <translate v-bind:current-language="current" language="ar"><b>اهلا و سهلا</b></translate>
+        <translate v-bind:current-language="current" language="tl"><b>Maligayang Pagdating</b></translate>
         </p>
     </div>
 </template>
@@ -40,7 +34,8 @@ export default {
                 ar: 'العربية',
                 en: 'English',
                 ms: 'Bahasa Melayu',
-                sv: 'Svenska'
+                sv: 'Svenska',
+                tl: 'Tagalog'
             },
             current: 'ms'
         };
