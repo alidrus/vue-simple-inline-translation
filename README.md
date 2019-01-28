@@ -57,12 +57,6 @@ recommend it only for typesetting purposes (bold, italic, etc) though. Due to
 the fact that you cannot have multiple root elements within a component
 template, having tags in the enclosed text will add a `<span>` block around it.
 
-:new: You can now specify the enclosing tag to use instead of the default
-`<span>` by specifying the prop `enclosing-tag`:
-```HTML
-    <translation enclosing-tag="div" current-language="en" language="en">This will be enclosed within a <b>div</b> tag.</translation>
-```
-
 For example:
 ```HTML
 <template>
@@ -76,4 +70,10 @@ For example:
 will result in the following output:
 ```HTML
 <h1><span>Welcome to my <b>web site</b></span></h1>
+```
+
+:new: You can now specify the enclosing tag to use instead of the default
+`<span>` by specifying the prop `enclosing-tag`:
+```HTML
+    <translation enclosing-tag="div" current-language="en" language="en">This will be enclosed within a <b>div</b> tag.</translation>
 ```
