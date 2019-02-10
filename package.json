@@ -1,6 +1,6 @@
 {
   "name": "@alidrus/vue-simple-inline-translation",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve ./example/main.js --open",
@@ -45,7 +45,7 @@
     "component"
   ],
   "resolutions": {
-      "ajv": "6.8.1"
+    "ajv": "6.8.1"
   },
   "main": "dist/vue-simple-inline-translation.common.js",
   "module": "dist/vue-simple-inline-translation.common.min.js"
