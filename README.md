@@ -1,6 +1,24 @@
 # @alidrus/vue-simple-inline-translation
 A Vue component that simplifies the way text is translated: by translating it inline.
 
+## Motivation
+
+From my observation throughout the years, I have noticed that in most (or all)
+translation systems, translated strings are looked up from an array or object
+which has to be maintained separately from the markup. While working on
+translating a page, one often has to open a split view in the editor to find
+the corresponding string to look up in the current portion of the markup. As a
+result, it becomes a little bit confusing for the person writing content (and
+markup) as they would need to keep things in sync and remember which lookup
+keys or symbols go into which portions of the page.
+
+So I wondered, what if there was a way to put the translations inline so that
+you can have the translated content and the original content placed side by
+side in the page's markup. This is where *vue-simple-inline-translation* comes
+in to the rescue.
+
+## Build Status
+
 [![Build Status](https://travis-ci.org/alidrus/vue-simple-inline-translation.svg?branch=master)](https://travis-ci.org/alidrus/vue-simple-inline-translation)
 
 ## Installation
@@ -15,14 +33,15 @@ With yarn:
 yarn add @alidrus/vue-simple-inline-translation
 ```
 
-## Usage Example
+## Usage Examples:
 
+The following is a simple example:
 ```HTML
 <template>
     <h1>
-        <translation :current-language="current" language="en">Welcome</translation>
-        <translation :current-language="current" language="ms">Selamat Datang</translation>
-        <translation :current-language="current" language="tl">Maligayang Pagdating</translation>
+        <translate :current-language="current" language="en">Welcome</translate>
+        <translate :current-language="current" language="ms">Selamat Datang</translate>
+        <translate :current-language="current" language="tl">Maligayang Pagdating</translate>
     </h1>
 </template>
 
@@ -31,7 +50,7 @@ import { VueSimpleInlineTranslation } from '@alidrus/vue-simple-inline-translati
 
 export default {
     components: {
-        translation: VueSimpleInlineTranslation
+        translate: VueSimpleInlineTranslation
     },
     data() {
         return {
@@ -42,38 +61,65 @@ export default {
 </script>
 ```
 
-## Output (in HTML)
-
-The usage example above produces the following output:
+Output (in HTML markup):
 ```HTML
 <h1>Selamat Datang</h1>
 ```
 
-For a more extensive example, check App.vue in the *example/* folder.
+When the translation text contains HTML markup, it will automatically be
+enclosed within a `<span>` block by default. However, you can change the
+enclosing tag using the `enclosing-tag` attribute. For example, the following
+two translation blocks
+```HTML
+<template>
+    <p>
+        <translate :current-language="current" language="en">
+            To <b>boldly</b> go where no translation has gone before.
+        </translate>
+    </p>
 
-## Feature (and Caveat)
-You can embed plain text and some HTML tags within the `<translation>` block. I
-recommend it only for typesetting purposes (bold, italic, etc) though. Due to
-the fact that you cannot have multiple root elements within a component
-template, having tags in the enclosed text will add a `<span>` block around it.
+    <translate enclosing-tag="p" :current-language="current" language="en">
+        <span>To <b>boldly</b> go where no translation has gone before.</span>
+    </translate>
+</template>
+```
+would produce the same HTML markup:
+```HTML
+<p><span>To <b>boldly</b> go where no translation has gone before.</span></p>
+```
+
+For a more detailed example, check App.vue in the *example/* folder.
+
+## Available props
+
+| Prop             | Type      | Default | Description                                                                                                        |
+| ---------------- | --------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| current-language | `String`  |         | Current language.                                                                                                  |
+| language         | `String`  |         | Language of the translated text.                                                                                   |
+| enclosing-tag    | `String`  | `span`  | HTML tag used to enclose the translated text. By default, only applied when translation text contains HTML markup. |
+| force-tag        | `Boolean` | `false` | Force enclosing tag to be used even when translation is plain text without markup.                                 |
+| tag-class        | `Object`  | `{}`    | CSS classes to apply to the enclosing tag. Same format as v-bind:class using an object.                            |
+| tag-style        | `Object`  | `{}`    | CSS styles to apply to the enclosing tag. Same format as v-bind:style using an object.                             |
+| tag-attributes   | `Object`  | `{}`    | The enclosing tag's HTML attributes (property-value pairs).                                                        |
+
+### Common mistakes when setting prop values
+
+#### no `v-bind`
+Not using `v-bind` (or the `:` shorthand) to set `current-language`,
+`force-tag`, `tag-class`, `tag-style` and `tag-attributes` properties.
 
 For example:
 ```HTML
-<template>
-    <h1>
-        <translation current-language="en" language="en">Welcome to my <b>web site</b></translation>
-        <translation current-language="en" language="ms">Selamat Datang ke <b>laman web</b> saya</translation>
-        <translation current-language="en" language="tl">Maligayang Pagdating sa aking <b>website</b></translation>
-    </h1>
-</template>
+<translate … force-tag="true" … >
 ```
-will result in the following output:
-```HTML
-<h1><span>Welcome to my <b>web site</b></span></h1>
-```
+will set the force-tag prop to the string value `"true"` instead of boolean
+value `true` and this will produce an error when the prop fails to validate.
 
-:new: You can now specify the enclosing tag to use instead of the default
-`<span>` by specifying the prop `enclosing-tag`:
+#### wrong prop type
+Using an array for `tag-class`, `tag-style` or `tag-attributes` instead of an object.
+
+For example:
 ```HTML
-    <translation enclosing-tag="div" current-language="en" language="en">This will be enclosed within a <b>div</b> tag.</translation>
+<translate … v-bind:tag-class="[ 'has-text-bold', 'is-active' ]" … >
 ```
+will produce an error when the prop fails to validate.
