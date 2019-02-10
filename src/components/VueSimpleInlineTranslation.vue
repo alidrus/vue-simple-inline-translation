@@ -66,10 +66,6 @@ export default {
             if (Object.keys(this.tagAttributes).length > 0) {
                 dataObject.attrs = this.tagAttributes;
             }
-            console.dir({
-                slots: this.$slots.default,
-                tag: this.enclosingTag
-            });
             return this.$slots.default.length === 1 && this.forceTag === false
                 ? this.$slots.default[0]
                 : h(this.enclosingTag, dataObject, this.$slots.default);
