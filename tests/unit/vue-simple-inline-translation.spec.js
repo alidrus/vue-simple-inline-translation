@@ -55,4 +55,86 @@ describe('VueSimpleInlineTranslation.vue', () => {
         });
         expect(wrapper.is(enclosingTag)).to.equal(true);
     });
+
+    it('renders text enclosed by <span> tag if force-tag prop set to true', () => {
+        const text = 'Hello World';
+        const currentLanguage = 'en';
+        const language = 'en';
+        const forceTag = true;
+        const wrapper = mount(VueSimpleInlineTranslation, {
+            propsData: { currentLanguage, language, forceTag },
+            slots: {
+                default: text
+            }
+        });
+        expect(wrapper.is('span')).to.equal(true);
+    });
+
+    it('renders enclosing tag with specified class attribute', () => {
+        const text = 'Hello there <b>World</b>';
+        const currentLanguage = 'en';
+        const language = 'en';
+        const enclosingTag = 'p';
+        const tagClass = {
+            'has-text-bold': true
+        };
+        const wrapper = mount(VueSimpleInlineTranslation, {
+            propsData: {
+                currentLanguage,
+                language,
+                enclosingTag,
+                tagClass
+            },
+            slots: {
+                default: text
+            }
+        });
+        expect(wrapper.attributes('class')).to.equal('has-text-bold');
+    });
+
+    it('renders enclosing tag with specified style attribute', () => {
+        const text = 'Hello there <b>World</b>';
+        const currentLanguage = 'en';
+        const language = 'en';
+        const enclosingTag = 'p';
+        const tagStyle = {
+            'text-align': 'center'
+        };
+        const wrapper = mount(VueSimpleInlineTranslation, {
+            propsData: {
+                currentLanguage,
+                language,
+                enclosingTag,
+                tagStyle
+            },
+            slots: {
+                default: text
+            }
+        });
+        expect(wrapper.attributes('style')).to.equal('text-align: center;');
+    });
+
+    it('renders enclosing tag with specified attributes', () => {
+        const text = 'Hello there <b>World</b>';
+        const currentLanguage = 'en';
+        const language = 'en';
+        const enclosingTag = 'td';
+        const tagAttributes = {
+            colspan: '2',
+            rowspan: '3'
+        };
+        const wrapper = mount(VueSimpleInlineTranslation, {
+            propsData: {
+                currentLanguage,
+                language,
+                enclosingTag,
+                tagAttributes
+            },
+            slots: {
+                default: text
+            }
+        });
+        expect(wrapper.attributes('colspan')).to.equal('2');
+        expect(wrapper.attributes('rowspan')).to.equal('3');
+    });
 });
