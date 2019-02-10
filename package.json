@@ -44,6 +44,9 @@
     "vue",
     "component"
   ],
+  "resolutions": {
+      "ajv": "6.8.1"
+  },
   "main": "dist/vue-simple-inline-translation.common.js",
   "module": "dist/vue-simple-inline-translation.common.min.js"
 }
