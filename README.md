@@ -7,6 +7,7 @@ A Vue component that simplifies the way text is translated: by translating it in
 [![license](https://img.shields.io/github/license/alidrus/vue-simple-inline-translation.svg?style=flat)](https://tldrlegal.com/license/mit-license)
 [![issues](https://img.shields.io/github/issues/alidrus/vue-simple-inline-translation.svg?style=flat)](https://github.com/alidrus/vue-simple-inline-translation/issues)
 [![Build Status](https://travis-ci.org/alidrus/vue-simple-inline-translation.svg?branch=master)](https://travis-ci.org/alidrus/vue-simple-inline-translation)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/alidrus/vue-simple-inline-translation.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/alidrus/vue-simple-inline-translation/alerts/)
 
 ## Motivation
 
