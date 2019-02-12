@@ -1,5 +1,11 @@
 # @alidrus/vue-simple-inline-translation
+
 A Vue component that simplifies the way text is translated: by translating it inline.
+
+[![npm downloads](https://img.shields.io/npm/dt/@alidrus/vue-simple-inline-translation.svg?colorB=green&label=downloads&style=flat)](https://www.npmjs.com/package/@alidrus/vue-simple-inline-translation)
+[![npm version](https://img.shields.io/npm/v/@alidrus/vue-simple-inline-translation.svg?style=flat)](https://www.npmjs.com/package/@alidrus/vue-simple-inline-translation)
+[![license](https://img.shields.io/github/license/alidrus/vue-simple-inline-translation.svg?style=flat)](https://tldrlegal.com/license/mit-license)
+[![issues](https://img.shields.io/github/issues/alidrus/vue-simple-inline-translation.svg?style=flat)](https://github.com/alidrus/vue-simple-inline-translation/issues)
 
 ## Motivation
 
@@ -123,3 +129,19 @@ For example:
 <translate … v-bind:tag-class="[ 'has-text-bold', 'is-active' ]" … >
 ```
 will produce an error when the prop fails to validate.
+
+## Patreon
+
+[![sponsor me](https://img.shields.io/badge/sponsor%20me-via%20patreon-yellow.svg)](https://www.patreon.com/alidrus)
+
+If you like what I do and would like to see more of my work, please consider
+sponsoring me via my [Patreon](https://www.patreon.com/alidrus) page. I
+appreciate each and every contribution that would help me give back to the open
+source community without worrying too much about making a living. Patrons who
+join the
+[Volucris Tier](https://www.patreon.com/join/alidrus/checkout?rid=3324251) will
+get a special mention below.
+
+## Sponsors
+
+None Yet.
