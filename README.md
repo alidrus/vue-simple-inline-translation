@@ -6,6 +6,7 @@ A Vue component that simplifies the way text is translated: by translating it in
 [![npm version](https://img.shields.io/npm/v/@alidrus/vue-simple-inline-translation.svg?style=flat)](https://www.npmjs.com/package/@alidrus/vue-simple-inline-translation)
 [![license](https://img.shields.io/github/license/alidrus/vue-simple-inline-translation.svg?style=flat)](https://tldrlegal.com/license/mit-license)
 [![issues](https://img.shields.io/github/issues/alidrus/vue-simple-inline-translation.svg?style=flat)](https://github.com/alidrus/vue-simple-inline-translation/issues)
+[![Build Status](https://travis-ci.org/alidrus/vue-simple-inline-translation.svg?branch=master)](https://travis-ci.org/alidrus/vue-simple-inline-translation)
 
 ## Motivation
 
@@ -22,10 +23,6 @@ So I wondered, what if there was a way to put the translations inline so that
 you can have the translated content and the original content placed side by
 side in the page's markup. This is where *vue-simple-inline-translation* comes
 in to the rescue.
-
-## Build Status
-
-[![Build Status](https://travis-ci.org/alidrus/vue-simple-inline-translation.svg?branch=master)](https://travis-ci.org/alidrus/vue-simple-inline-translation)
 
 ## Installation
 
