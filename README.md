@@ -128,19 +128,3 @@ For example:
 <translate … v-bind:tag-class="[ 'has-text-bold', 'is-active' ]" … >
 ```
 will produce an error when the prop fails to validate.
-
-## Patreon
-
-[![sponsor me](https://img.shields.io/badge/sponsor%20me-via%20patreon-yellow.svg)](https://www.patreon.com/alidrus)
-
-If you like what I do and would like to see more of my work, please consider
-sponsoring me via my [Patreon](https://www.patreon.com/alidrus) page. I
-appreciate each and every contribution that would help me give back to the open
-source community without worrying too much about making a living. Patrons who
-join the
-[Volucris Tier](https://www.patreon.com/join/alidrus/checkout?rid=3324251) will
-get a special mention below.
-
-## Sponsors
-
-None Yet.
